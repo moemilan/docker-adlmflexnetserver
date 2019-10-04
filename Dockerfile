@@ -20,6 +20,7 @@ ENV PATH="${PATH}:/opt/flexnetserver/"
 #########################################
 ADD /files /usr/local/bin
 
+# installing required packages
 RUN yum update -y && yum install -y \
     redhat-lsb-core \
     wget && \
@@ -31,7 +32,7 @@ RUN mkdir -p ${TEMP_PATH} && cd ${TEMP_PATH} && \
     rm -rf ${TEMP_PATH} && \
     yum -y remove wget && \
     rm -rf /var/cache/yum
-    
+
 # lmadmin is required for -2 -p flag support
 RUN groupadd -r lmadmin && \
     useradd -r -g lmadmin lmadmin
