@@ -1,11 +1,11 @@
-FROM centos:centos6
-MAINTAINER hays.clark@gmail.com
+FROM centos:centos7
+LABEL maintainer=moemilan@gmail.com
 
 #########################################
 ##             CONSTANTS               ##
 #########################################
 # path for Network Licence Manager
-ARG NLM_URL=http://download.autodesk.com/us/support/files/network_license_manager/11_13_1_2_v2/Linux/nlm11.13.1.2_ipv4_ipv6_linux64.tar.gz
+ARG NLM_URL=https://knowledge.autodesk.com/sites/default/files/file_downloads/nlm11.16.2.0_ipv4_ipv6_linux64.tar.gz
 # path for temporary files
 ARG TEMP_PATH=/tmp/flexnetserver
 
@@ -20,6 +20,7 @@ ENV PATH="${PATH}:/opt/flexnetserver/"
 #########################################
 ADD /files /usr/local/bin
 
+# installing required packages
 RUN yum update -y && yum install -y \
     redhat-lsb-core \
     wget && \
@@ -28,7 +29,9 @@ RUN yum update -y && yum install -y \
 RUN mkdir -p ${TEMP_PATH} && cd ${TEMP_PATH} && \
     wget --progress=bar:force ${NLM_URL} && \
     tar -zxvf *.tar.gz && rpm -vhi *.rpm && \
-    rm -rf ${TEMP_PATH}
+    rm -rf ${TEMP_PATH} && \
+    yum -y remove wget && \
+    rm -rf /var/cache/yum
 
 # lmadmin is required for -2 -p flag support
 RUN groupadd -r lmadmin && \
