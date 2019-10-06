@@ -1,6 +1,6 @@
 ADLMFlexNetServer
 =================
-[![Docker Automated buil](https://img.shields.io/docker/automated/moemilan/adlmflexnetserver.svg?maxAge=2592000)](https://hub.docker.com/r/moemilan/adlmflexnetserver/builds/) [![Docker Stars](https://img.shields.io/docker/stars/moemilan/adlmflexnetserver.svg?maxAge=2592000)](https://hub.docker.com/r/moemilan/adlmflexnetserver/) [![](https://img.shields.io/docker/pulls/moemilan/adlmflexnetserver.svg)](https://hub.docker.com/r/moemilan/adlmflexnetserver 'DockerHub') [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+[![Docker Automated buil](https://img.shields.io/docker/cloud/automated/moemilan/adlmflexnetserver.svg?maxAge=2592000)](https://hub.docker.com/r/moemilan/adlmflexnetserver/builds/) [![Docker Stars](https://img.shields.io/docker/stars/moemilan/adlmflexnetserver.svg?maxAge=2592000)](https://hub.docker.com/r/moemilan/adlmflexnetserver/) [![](https://img.shields.io/docker/pulls/moemilan/adlmflexnetserver.svg)](https://hub.docker.com/r/moemilan/adlmflexnetserver 'DockerHub') [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 
  > Unofficial Autodesk License Manager FLEXlm® Network Server container.
 
